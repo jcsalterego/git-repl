@@ -2,6 +2,10 @@
 
 A git REPL (read-eval-print loop) courtesy of [rlwrap](https://github.com/hanslub42/rlwrap).
 
+Get all the readline goodness (history search, readline key behavior)
+for git, as well as some tab completion (basic subcommands and
+filenames).
+
 ## Requirements
 
 * git
