@@ -1,6 +1,6 @@
 # git-repl
 
-A git REPL (read-eval-print-loop) courtesy of [rlwrap](https://github.com/hanslub42/rlwrap).
+A git REPL (read-eval-print loop) courtesy of [rlwrap](https://github.com/hanslub42/rlwrap).
 
 ## Requirements
 
