@@ -5,7 +5,7 @@ A git REPL (read-eval-print-loop) courtesy of [rlwrap](https://github.com/hanslu
 ## Requirements
 
 * git
-* repl
+* rlwrap
 * bash
 
 ## Quick Start
