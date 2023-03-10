@@ -23,11 +23,17 @@ while read -r line;
 do
     if [ "${line}" = "repl" ]; then
         echo "Repling from inside of repl?" >&2
+    elif [ "${line}" = "exit" ]; then
+        break
     elif [ -n "${line}" ]; then
         cmd="git ${line}"
         bash -c "${cmd}"
     fi
     echo -n "${PROMPT}"
 done
+
+if [ -z "${line}" ]; then
+    echo ""
+fi
 
 echo "bye" >&2
