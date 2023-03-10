@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ -z "${RLWRAPPED}" ]; then
+    subcommands="$(mktemp)"
+    git help -a | awk '/^   /{print $1}' > $subcommands
+    RLWRAPPED=1 rlwrap -c -A --break-chars '_' -f $subcommands $0
+    rv=$?
+    exit $rv
+fi
+
+PROMPT="git> "
+
+echo -n "${PROMPT}"
+while read -r line;
+do
+    if [ "${line}" = "repl" ]; then
+        echo "Repling from inside of repl?" >&2
+    elif [ -n "${line}" ]; then
+        cmd="git ${line}"
+        bash -c "${cmd}"
+    fi
+    echo -n "${PROMPT}"
+done
+
+echo "bye" >&2
